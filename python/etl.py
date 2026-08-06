@@ -1,19 +1,26 @@
-import pandas as pd
+"""
+Main ETL Pipeline
+"""
 
-from pathlib import Path
-
+from config import RAW_DATA_PATH
+from extract import extract_data
 from loader import load_raw_data
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-DATA_PATH = PROJECT_ROOT / "data" / "raw" / "procurement_data.csv"
+def main():
 
-print("Reading CSV...")
+    print("=" * 60)
+    print("ProcureSense ETL Pipeline")
+    print("=" * 60)
 
-df = pd.read_csv(DATA_PATH)
+    # Extract
+    df = extract_data(RAW_DATA_PATH)
 
-print(f"Rows Loaded : {len(df)}")
+    # Load Raw Data
+    load_raw_data(df)
 
-load_raw_data(df)
+    print("\n✅ ETL Stage 1 Completed Successfully!")
 
-print("\nETL Step 1 Complete!")
+
+if __name__ == "__main__":
+    main()

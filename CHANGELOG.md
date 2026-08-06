@@ -20,3 +20,10 @@
 - Analytics tables
 - SQL business queries
 - Power BI dashboards
+
+
+### Added
+
+- Extract module
+- ETL orchestration
+- Modular project structure
