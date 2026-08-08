@@ -27,3 +27,7 @@
 - Extract module
 - ETL orchestration
 - Modular project structure
+### Added
+
+- Data validation module
+- Dataset quality checks

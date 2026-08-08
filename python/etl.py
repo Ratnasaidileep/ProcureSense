@@ -5,7 +5,7 @@ Main ETL Pipeline
 from config import RAW_DATA_PATH
 from extract import extract_data
 from loader import load_raw_data
-
+from validate import validate_data
 
 def main():
 
@@ -15,7 +15,7 @@ def main():
 
     # Extract
     df = extract_data(RAW_DATA_PATH)
-
+    validate_data(df)
     # Load Raw Data
     load_raw_data(df)
 
